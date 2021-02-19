@@ -22,11 +22,19 @@ const app = express()
 const port = 3000
 
 app.get('/', (req, res) => {
-    res.send('You are home!')
-  })
+    res.sendFile(path.join(__dirname + '/index.html'));
+})
 
-app.get('/hello', (req, res) => {
-  res.send('Hello World!')
+app.get('/register', (req, res) => {
+    res.sendFile(path.join(__dirname + '/index.html'));
+})
+
+app.get('/loggedin', (req, res) => {
+    res.sendFile(path.join(__dirname + '/index.html'));
+})
+
+app.get('/error', (req, res) => {
+    res.sendFile(path.join(__dirname + '/index.html'));
 })
 
 app.listen(port, () => {
