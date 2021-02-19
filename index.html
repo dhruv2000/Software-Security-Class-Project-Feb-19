@@ -2,17 +2,20 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Simple website</title>
-    <link rel="stylesheet" href="main.css">
+    <title>Login Page</title>
   </head>
   <body>
     <h1>Login</h1>
-    <form method="POST" action="/login">
+    <form action="/login" method="POST">
       <label for="username">Username:</label>
       <input type="text" id="username" name="username"><br><br>
       <label for="password">Password:</label>
-      <input type="text" id="password" name="password"><br><br>
+      <input type="password" id="password" name="password"><br><br>
       <input type="submit" value="Submit">
+    </form>
+    <br>
+    <form action="/register" method="GET">
+      <button>Not registered?<br> Please click here to go to the registration screen</a></button>
     </form>
     
   </body>

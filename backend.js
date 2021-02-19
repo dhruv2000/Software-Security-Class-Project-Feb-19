@@ -1,22 +1,3 @@
-// //Load HTTP module
-// const http = require("http");
-// const hostname = '127.0.0.1';
-// const port = 3000;
-
-// //Create HTTP server and listen on port 3000 for requests
-// const server = http.createServer((req, res) => {
-
-//   //Set the response HTTP header with HTTP status and Content type
-//   res.statusCode = 200;
-//   res.setHeader('Content-Type', 'text/plain');
-//   res.end('Hello World\n');
-// });
-
-// //listen for request on port 3000, and as a callback function have the port listened on logged
-// server.listen(port, hostname, () => {
-//   console.log(`Server running at http://${hostname}:${port}/`);
-// });
-
 const express = require('express');
 const path = require('path');
 const app = express();
@@ -44,11 +25,24 @@ app.get('/error', (req, res) => {
     res.sendFile(path.join(__dirname + '/error.html'));
 })
 
+let checkUserPass = async(username, password) => {
+    //TODO: CHECK USERNAME AND PASSWORD COMBO
+    return true;
+}
+
 app.post('/login', (req, res) => {
-    console.log(req.body.username);
-    console.log(req.body.password);
-    //console.log(req.body);
-    res.sendFile(path.join(__dirname + '/index.html'));
+    let username = req.body.username;
+    let password = req.body.password;
+    console.log("[ATTEMPTING LOGIN]");
+
+    if(checkUserPass(username, password)){
+        console.log("[LOGIN SUCCESS]");
+        res.sendFile(path.join(__dirname + '/loggedin.html'));
+    }else{
+        console.log("[LOGIN FAILED]");
+        res.sendFile(path.join(__dirname + '/error.html'));
+    }
+    
 })
 
 app.listen(port, () => {

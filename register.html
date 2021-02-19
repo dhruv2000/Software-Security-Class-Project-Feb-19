@@ -2,16 +2,35 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Simple website</title>
-    <link rel="stylesheet" href="main.css">
+    <title>Registration Page</title>
+    <script>
+      var comparePassword = function(){
+          if(document.getElementById("password").value == document.getElementById("confirm_pass").value){
+            document.getElementById('confirm').style.color = 'green';
+            document.getElementById('confirm').innerHTML = 'matching';
+          }else{
+            document.getElementById('confirm').style.color = 'red';
+            document.getElementById('confirm').innerHTML = 'not matching';
+          }
+      }
+    </script>
   </head>
   <body>
-    <h1>Task List</h1>
-    <p id="msg">Current tasks:</p>
-    <ul>
-      <li class="list">Add visual styles</li>
-      <li class="list">Add light and dark themes</li>
-      <li>Enable switching the theme</li>
-    </ul>
+    <h1>Registration Page</h1>
+    <form action="/adduser" method="POST">
+      <label for="username">Enter Desired Username:</label><br><br>
+      <input type="text" id="username" name="username"><br><br>
+      <label for="password">Enter Desired Password:</label><br><br>
+      <input type="password" id="password" name="password"><br><br>
+      <label for="confirm_pass">Confirm Password:</label><br><br>
+      <input type="password" id="confirm_pass" name="confirm_pass" onkeyup="comparePassword();">
+      <span id='confirm'></span><br><br>
+      <input type="submit" value="Submit">
+    </form>
+    <br>
+    <form action="/" method="GET">
+      <button>Already registered?<br> Please click here to go to the login screen</a></button>
+    </form>
+    
   </body>
 </html>
