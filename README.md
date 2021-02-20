@@ -17,3 +17,13 @@ This will set up the database to localhost:5555
 ## Running on local host
 
 Open up a new terminal while the other one is running the db and run: 'node ./backend.js' to start the application. It should run on localhost:3000
+
+## Other Submission Information
+
+We have the gif of the run through of the app and the WriteUp.txt in this directory. That should be all the information needed for the submission and to be able to run our code locally.
+
+## Authors
+Dhruv Patel
+Shaun Fidler
+Dylan Booth
+Chance Onyiorah
