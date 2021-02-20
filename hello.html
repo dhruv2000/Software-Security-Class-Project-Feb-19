@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Logged In</title>
+  </head>
+  <body>
+    <h1 id="dynamic_name"></h1>
+    <script>
+      fetch("/getusername").then((response) => {
+        response.text().then(function(text){
+          console.log(text);
+          document.getElementById("dynamic_name").innerHTML = 'Successful login! Welcome ' + text;
+        })
+      })
+    </script>
+    </h3>
+    <img src="https://media.giphy.com/media/XreQmk7ETCak0/giphy.gif" />
+    <form action="/logout" method="GET">
+      <button>Logout</button>
+    </form>
+  </body>
+</html>

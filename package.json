@@ -18,7 +18,9 @@
   },
   "homepage": "https://github.com/dhruv2000/Software-Security-Class-Project-Feb-19#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "express-session": "^1.17.1",
+    "mongoose": "^5.11.17"
   },
   "devDependencies": {}
 }
