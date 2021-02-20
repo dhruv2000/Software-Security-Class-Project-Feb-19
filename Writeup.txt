@@ -1,0 +1,8 @@
+In this project, we ran a simple node server locally to display login fields. The user can input their username and passwords, then login with these credentials. We stored the registration information in a MongoDB database to recall registered users. The program checks the user's login from the database to authenticate the user.
+To run the project, the user can install node and run the node command on backend.js, then open localhost:3000 in browser.
+
+List of group members-
+Dylan Booth
+Dhruv Patel
+Shaun Fidler
+Chance Onyiorah
